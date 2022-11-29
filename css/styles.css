@@ -373,7 +373,7 @@ main {
   max-height: 188px;
 }
 .small {
-  width: calc(100%-4px);
+  width: calc(100% - 4px);
   height: 9vw;
   max-height: 128px;
   flex-direction: row;
@@ -769,7 +769,4 @@ footer {
   #filtres {
     column-gap: 8px;
   }
-  /* .filterButton {
-    width: 50%;
-  } */
 }
