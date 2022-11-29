@@ -634,15 +634,18 @@ footer {
     top: 24px;
   }
   .filterButton {
+    padding: 14px 8px 14px 16px;
     width: 47%;
     max-width: 220px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    font-size: 15px;
   }
   .filterButton i {
     width: 15%;
+    margin-right: 4px;
   }
   .info {
     width: 90%;
@@ -762,9 +765,11 @@ footer {
     font-size: 15px;
   }
   .description p,
-  .blueStar,
-  .filterButton {
+  .blueStar {
     font-size: 13px;
+  }
+  .filterButton {
+    font-size: 12px;
   }
   #filtres {
     column-gap: 8px;
