@@ -35,7 +35,7 @@ p,
 }
 h1 {
   margin: 32px 0px 0px 0px;
-  font-size: 1.58vw;
+  font-size: 22px;
   font-weight: 700;
 }
 p {
@@ -89,6 +89,8 @@ main {
 }
 .navButton:hover {
   color: var(--main-blue);
+  border-top: 2px solid #318aff;
+  padding-top: calc(var(--header-padding-top) - 2px);
 }
 
 /* Main Page */
@@ -96,22 +98,34 @@ main {
   flex-direction: column;
 }
 
-.title,
 #searchBar label,
 #searchInput,
 #searchInput::placeholder,
-#searchButton {
-  font-size: 1.4vw;
+#searchButton,
+#filtres h2,
+#viewMoreButton {
+  font-size: 18px;
   font-weight: 700;
 }
+.filterButton,
+.filterButton i {
+  font-size: 17px;
+  font-weight: 600;
+}
 .title {
-  font-size: 1.5vw;
+  font-size: 22px;
+  font-weight: 700;
+}
+.subtitle {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 400;
 }
 /* Recherche */
 #searchBar {
   display: flex;
-  width: 28vw;
-  height: 3.5vw;
+  width: 420px;
+  height: 50px;
   margin-top: 16px;
 }
 #searchBar fieldset {
@@ -127,7 +141,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3.5vw;
+  width: 48px;
   height: 96%;
   border: 1px solid var(--gray);
   border-radius: 15px 0px 0px 15px;
@@ -136,7 +150,7 @@ main {
 #searchInput {
   padding-right: 16px;
   padding-left: 16px;
-  height: 100%;
+  flex: 1;
   border: 1px solid var(--gray);
   border-width: 1px 0px 1px 0px;
 }
@@ -152,7 +166,7 @@ main {
 }
 #searchButton {
   display: flex;
-  padding: 0px 1.5vw 0px 1vw;
+  padding: 0px 16px 0px 16px;
   align-items: center;
   background: var(--main-blue);
   border: 1px solid var(--main-blue);
@@ -161,10 +175,7 @@ main {
   text-align: center;
   color: #ffffff;
 }
-.subtitle {
-  margin-top: 8px;
-  font-size: 1.15vw;
-}
+
 .info {
   margin-top: 32px;
 }
@@ -172,20 +183,20 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.8vw;
-  height: 1.8vw;
+  width: 24px;
+  height: 24px;
   color: var(--main-blue);
   border: 1px solid var(--gray);
-  border-radius: 3vw;
+  border-radius: 12px;
   margin-right: 12px;
 }
 .infoIcon i {
-  font-size: 1.1vw;
+  font-size: 12px;
   height: 0px;
   width: 0px;
   position: relative;
-  right: 0.2vw;
-  bottom: 0.1vw;
+  right: 2px;
+  bottom: 1px;
 }
 .infoIcon:hover {
   background-color: var(--light-blue);
@@ -195,20 +206,17 @@ main {
 #filtres {
   display: flex;
   justify-content: space-between;
-  width: 65vw;
+  width: calc(300px + 50vw);
+  min-width: 840px;
+  max-width: 940px;
   margin-top: 32px;
 }
-#filtres h2,
-.filterButton,
-.filterButton i {
-  font-size: 1.35vw;
-  font-weight: 600;
-}
+
 .filterButton {
-  padding: 1vw 1.5vw 1vw 1.5vw;
+  padding: 14px 16px 14px 16px;
   border: 2px solid var(--gray);
   background-color: transparent;
-  border-radius: 10vw;
+  border-radius: 32px;
 }
 .filterButton i {
   color: var(--main-blue);
@@ -229,32 +237,17 @@ main {
   justify-content: space-between;
   margin-top: 64px;
 }
-.description {
+
+/* Hébergements */
+#lodging,
+#mostPopular {
+  height: 40vw;
+  max-height: 560px;
+}
+#lodging {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 4px 12px 4px 12px;
-  flex: 1;
-}
-.description h3 {
-  margin: 0px;
-  font-weight: 700;
-  font-size: 1.2vw;
-}
-.description p {
-  font-weight: 400;
-  font-size: 1vw;
-}
-.blueStar {
-  color: var(--main-blue);
-  font-size: 1vw;
-  letter-spacing: -1px;
-}
-.blueStar i:last-child {
-  color: var(--gray);
-}
-/* Hébergements */
-#lodging {
   width: 62%;
 }
 .lodgingCardContainer {
@@ -262,47 +255,19 @@ main {
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  row-gap: 32px;
+  height: 78%;
+  row-gap: 16px;
   column-gap: 8px;
 }
-.card {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease-in-out;
-  overflow: hidden;
-  border: 4px solid #ffffff;
-  background-color: #ffffff;
-  border-radius: 20px;
-  width: 30%;
-  height: 13vw;
-  max-height: 188px;
-}
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-.card img {
-  width: 100%;
-  height: 60%;
-  object-fit: cover;
-  object-position: center center;
-  transition: all 1s ease-in-out;
-}
-.card:hover:not(.small) img {
-  width: 110%;
-  object-position: -10px center;
-}
 #viewMoreButton {
+  margin: 8px 0px 0px 0px;
   transition: all 0.5s ease-in-out;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 12px 8px 12px 8px;
+  padding: 10px 8px 12px 8px;
   width: 98%;
   border-radius: 12px;
 }
 #viewMoreButton:hover {
-  background-color: #b9b9b9;
+  background-color: #cccccc;
 }
 #viewMoreButton i {
   transition: all 0.5s ease-in-out;
@@ -313,6 +278,7 @@ main {
   transform: translate(8px);
   opacity: 1;
 }
+
 /* les plus populaires */
 #mostPopular {
   margin-left: 32px;
@@ -332,22 +298,10 @@ main {
 }
 .popularCardContainer {
   width: 100%;
+  height: 85%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-}
-.small {
-  width: 100%;
-  height: 9vw;
-  flex-direction: row;
-}
-.small img {
-  height: 100%;
-  width: 40%;
-}
-.small:hover img {
-  height: 110%;
-  object-position: center center;
+  justify-content: space-between;
 }
 
 /* Activités */
@@ -360,9 +314,82 @@ main {
   display: flex;
   justify-content: space-between;
 }
+
+/* Cards */
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  object-position: center center;
+  transition: all 1s ease-in-out;
+}
+.card:hover:not(.small) img {
+  width: 110%;
+  object-position: -10px center;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 16px 8px 16px;
+  flex: 1;
+}
+.description h3 {
+  margin: 0px;
+  font-weight: 700;
+  font-size: 16px;
+}
+.description p {
+  font-weight: 400;
+  font-size: 14px;
+}
+.blueStar {
+  color: var(--main-blue);
+  font-size: 14px;
+  letter-spacing: -1px;
+}
+.blueStar i:last-child {
+  color: var(--gray);
+}
+/* Card per size */
+.medium {
+  width: 30%;
+  /* min-height: 40%; */
+  height: 13.5vw;
+  max-height: 188px;
+}
+.small {
+  width: calc(100%-4px);
+  height: 9vw;
+  max-height: 128px;
+  flex-direction: row;
+}
+.small img {
+  height: 100%;
+  width: 40%;
+}
+.small:hover img {
+  height: 110%;
+  object-position: center center;
+}
 .large {
   max-height: none;
   height: 33vw;
+  max-height: 420px;
   width: 23%;
   border: none;
   margin: 0px;
@@ -401,110 +428,89 @@ footer {
 
 /* Media queries */
 @media all and (768px <= width) {
-  .fa-magnifying-glass {
-    width: 0px;
-    height: 0px;
+  .mobileSearchButton {
+    display: none;
+    /* width: 0px;
+    height: 0px; */
   }
 }
-@media all and (1400px <= width) {
-  h1 {
-    font-size: 22px;
-  }
+@media all and (1100px < width <= 1280px) {
   .title {
     font-size: 20px;
   }
-  #searchBar {
-    width: 400px;
-    height: 48px;
+  .description {
+    padding: 8px 12px 8px 12px;
   }
-  #searchBar label {
-    width: 48px;
-    font-size: 18px;
-  }
-  #searchInput,
-  #searchInput::placeholder,
-  #filtres h2,
   .description h3 {
-    font-size: 18px;
-  }
-  #searchButton {
-    padding: 0px 16px 0px 16px;
-  }
-  #searchButton,
-  .subtitle,
-  #filtres h2,
-  .filterButton,
-  .filterButton i {
-    font-size: 16px;
+    font-size: 14px;
   }
   .description p,
   .blueStar {
-    font-size: 15px;
-  }
-  #filtres {
-    width: 900px;
-  }
-  .filterButton {
-    padding: 8px 24px 8px 24px;
-  }
-  .infoIcon {
-    width: 24px;
-    height: 24px;
-  }
-  .infoIcon i {
-    font-size: 14px;
-    right: 2px;
-    bottom: 1px;
-  }
-  .small {
-    height: 128px;
-  }
-  .large {
-    height: 500px;
+    font-size: 12px;
   }
 }
+@media all and (width <= 1100px) {
+  .title {
+    font-size: 19px;
+  }
+  .description {
+    padding: 8px;
+  }
+  .description h3 {
+    font-size: 13px;
+  }
+  .description p,
+  .blueStar {
+    font-size: 11px;
+  }
+}
+
 /* Interface tablette */
+
 @media all and (768px <= width <= 992px) {
   h1 {
-    font-size: 2.2vw;
+    font-size: 20px;
   }
   .subtitle {
-    font-size: 1.6vw;
+    font-size: 14px;
   }
   /* Hebergement */
   #searchResults {
     flex-direction: column;
     align-items: center;
   }
-  #lodging {
-    width: 90%;
-  }
+  #lodging,
   #mostPopular {
     width: 90%;
+  }
+  #lodging {
+    height: 50vw;
+  }
+  #mostPopular {
+    height: 22vw;
     margin: 32px 0px 0px 0px;
   }
-  .title {
-    font-size: 2.2vw;
-  }
   .card {
-    height: 18vw;
+    height: 45%;
+  }
+  .title {
+    font-size: 20px;
   }
   .description {
-    padding: 0.6vw 1vw 0.6vw 1vw;
+    padding: 8px 12px 8px 12px;
+  }
+  .large .description {
+    padding: 8px 24px 8px 18px;
   }
   .description h3 {
-    font-size: 1.6vw;
+    font-size: 14px;
   }
-  .description p {
-    font-size: 1.2vw;
-  }
-  /* Most popular */
   .popularCardContainer {
     flex-direction: row;
   }
   .small {
-    margin-top: 1vw;
-    height: 11.5vw;
+    height: 90%;
+    width: 30%;
   }
   .large {
     height: 28vw;
@@ -513,30 +519,27 @@ footer {
     height: 80%;
   }
   #filtres {
+    min-width: 0px;
     width: 84vw;
   }
   #filtres h2,
   .filterButton,
-  .filterButton i {
-    font-size: 1.7vw;
+  .filterButton i,
+  #searchBar label,
+  #searchInput,
+  #searchInput::placeholder,
+  #searchButton {
+    font-size: 15px;
   }
   .filterButton {
-    height: 4.5vw;
-    padding: 0.2vw 1.5vw 0.2vw 1.5vw;
+    height: 40px;
+    padding: 8px 12px 8px 12px;
   }
   #searchBar {
-    height: 5vw;
+    height: 42px;
   }
   #searchBar label {
-    height: 95%;
-    width: 6vw;
-    font-size: 2vw;
-  }
-  #searchInput {
-    width: 28vw;
-  }
-  #searchInput::placeholder {
-    font-size: 2vw;
+    width: 40px;
   }
   #viewMoreButton {
     width: 20%;
@@ -574,32 +577,34 @@ footer {
   .navButton {
     border-bottom: 3px solid var(--gray);
   }
+  .navButton:hover {
+    color: var(--main-blue);
+    border-top: none;
+    padding-top: var(--header-padding-top);
+    border-bottom: 3px solid #318aff;
+    padding-bottom: calc(var(--header-padding-top) - 3px);
+  }
 
   /* search */
   #search {
+    width: 90%;
     padding: 0px 20px 0px 20px;
   }
-  h1 {
-    font-size: 6vw;
-  }
-  .subtitle {
-    font-size: 4vw;
-  }
+
   #searchBar {
     margin-top: 40px;
     width: 100%;
-    height: 11vw;
   }
   #searchButton {
     display: none;
   }
-  .fa-magnifying-glass {
-    padding: 3.5vw;
+  .mobileSearchButton {
     background: var(--main-blue);
     border: 1px solid var(--main-blue);
     border-radius: 0px 16px 16px 0px;
     color: #ffffff;
-    font-size: 3.5vw;
+    width: 54px;
+    font-size: 16px;
   }
   #searchBar fieldset,
   #filtres,
@@ -608,40 +613,35 @@ footer {
   }
   #searchBar label {
     border-radius: 16px 0px 0px 16px;
-    width: 10vw;
-    font-size: 3.5vw;
   }
   #searchInput {
     width: 90%;
   }
-  #searchInput,
-  #searchInput::placeholder {
-    font-size: 4vw;
-  }
+
   /* filtres */
   #filtres {
     margin: 0px;
     margin-top: 24px;
     flex-wrap: wrap;
+    column-gap: 16px;
     row-gap: 24px;
+    min-width: unset;
+    justify-content: space-around;
   }
   #filtres h2 {
     width: 100%;
-    font-size: 4.5vw;
     position: relative;
     top: 24px;
   }
   .filterButton {
-    width: 48.5%;
-    font-size: 3.2vw;
-    padding: 3vw 4vw 3vw 4vw;
+    width: 47%;
+    max-width: 220px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: flex-start;
   }
   .filterButton i {
-    font-size: 4.5vw;
     width: 15%;
   }
   .info {
@@ -651,13 +651,13 @@ footer {
   .infoIcon {
     position: absolute;
     left: 6.5%;
-    width: 5vw;
-    height: 5vw;
+    width: 16px;
+    height: 16px;
   }
   .infoIcon i {
-    font-size: 3vw;
-    right: 0.4vw;
-    bottom: 0.25vw;
+    font-size: 8px;
+    right: 0px;
+    bottom: 0px;
   }
   /* main */
   main {
@@ -669,64 +669,65 @@ footer {
   #searchResults {
     flex-direction: column-reverse;
   }
-  .title {
-    font-size: 6vw;
-  }
   #lodging {
     background-color: transparent;
   }
-  #lodging,
-  #mostPopular {
-    width: auto;
-    border-radius: 0px;
-    margin: 0px;
-  }
+
   /* cards */
-  .card {
-    max-height: none;
-    width: 100%;
-    height: 50vw;
-  }
-  .small {
-    height: 35vw;
-  }
-  .description {
-    padding: 2vw 4vw 2vw 4vw;
-  }
-  .description h3 {
-    font-size: 4vw;
-  }
-  .description p,
-  .blueStar {
-    font-size: 3vw;
-  }
-  .small .description p {
-    margin-top: 2vw;
-  }
+
   #viewMoreButton {
     display: none;
   }
   #activities {
     width: 90%;
     border-radius: 0px;
-    margin: 10vw 0px 0px 0px;
+    margin: 54px 0px 0px 0px;
   }
+  #lodging,
+  #mostPopular {
+    padding: 20px;
+    max-height: none;
+    height: auto;
+    width: auto;
+    border-radius: 0px;
+    margin: 0px;
+  }
+  .lodgingCardContainer,
+  .popularCardContainer,
   .activitiesCardContainer {
     flex-direction: column;
+    row-gap: 24px;
   }
+  .small,
+  .medium,
   .large {
-    margin-bottom: 6vw;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-    height: 50vw;
+    min-width: 80%;
+    width: auto;
+    /* max-width: 400px; */
+    height: 45vw;
+  }
+  .small {
+    max-height: 150px;
+  }
+  .medium,
+  .large {
+    max-height: 200px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .description {
+    padding: 14px 24px 14px 24px;
+  }
+  .description h3 {
+    font-size: 14px;
   }
   .large img {
-    height: 76%;
+    height: 80%;
   }
-  .large .description {
-    justify-content: center;
-  }
+
   footer {
-    margin: 0px;
+    margin: 64px 0px 0px 0px;
     flex-direction: column;
   }
   .footerLinkList {
@@ -734,4 +735,41 @@ footer {
     margin-top: 24px;
     padding-left: 24px;
   }
+}
+@media all and (380px <= width <= 600px) {
+  h1 {
+    font-size: 24px;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .description h3 {
+    font-size: 16px;
+  }
+  .description p,
+  .blueStar {
+    font-size: 14px;
+  }
+}
+@media all and (width <= 380px) {
+  h1 {
+    font-size: 20px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .description h3 {
+    font-size: 15px;
+  }
+  .description p,
+  .blueStar,
+  .filterButton {
+    font-size: 13px;
+  }
+  #filtres {
+    column-gap: 8px;
+  }
+  /* .filterButton {
+    width: 50%;
+  } */
 }
