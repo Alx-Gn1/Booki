@@ -430,8 +430,6 @@ footer {
 @media all and (768px <= width) {
   .mobileSearchButton {
     display: none;
-    /* width: 0px;
-    height: 0px; */
   }
 }
 @media all and (1100px < width <= 1280px) {
@@ -468,7 +466,8 @@ footer {
 /* Interface tablette */
 
 @media all and (768px <= width <= 992px) {
-  h1 {
+  h1,
+  .title {
     font-size: 20px;
   }
   .subtitle {
@@ -492,9 +491,6 @@ footer {
   }
   .card {
     height: 45%;
-  }
-  .title {
-    font-size: 20px;
   }
   .description {
     padding: 8px 12px 8px 12px;
@@ -540,9 +536,6 @@ footer {
   }
   #searchBar label {
     width: 40px;
-  }
-  #viewMoreButton {
-    width: 20%;
   }
   #viewMoreButton:hover {
     background-color: transparent;
@@ -614,27 +607,22 @@ footer {
   #searchBar label {
     border-radius: 16px 0px 0px 16px;
   }
-  #searchInput {
-    width: 90%;
-  }
 
   /* filtres */
   #filtres {
     margin: 0px;
     margin-top: 24px;
     flex-wrap: wrap;
-    column-gap: 16px;
-    row-gap: 24px;
+    column-gap: 8px;
     min-width: unset;
     justify-content: space-around;
   }
   #filtres h2 {
     width: 100%;
-    position: relative;
-    top: 24px;
   }
   .filterButton {
     padding: 14px 8px 14px 16px;
+    margin-bottom: 24px;
     width: 47%;
     max-width: 220px;
     text-align: center;
@@ -648,7 +636,6 @@ footer {
     margin-right: 4px;
   }
   .info {
-    width: 90%;
     margin-left: 10%;
   }
   .infoIcon {
@@ -659,14 +646,12 @@ footer {
   }
   .infoIcon i {
     font-size: 8px;
-    right: 0px;
-    bottom: 0px;
+    right: 1.5px;
+    bottom: 0.5px;
   }
   /* main */
   main {
     padding: 0px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
   }
   #searchResults {
@@ -677,7 +662,6 @@ footer {
   }
 
   /* cards */
-
   #viewMoreButton {
     display: none;
   }
@@ -704,9 +688,7 @@ footer {
   .small,
   .medium,
   .large {
-    min-width: 80%;
     width: auto;
-    /* max-width: 400px; */
     height: 45vw;
   }
   .small {
@@ -739,7 +721,7 @@ footer {
     padding-left: 24px;
   }
 }
-@media all and (380px <= width <= 600px) {
+@media all and (380px < width <= 600px) {
   h1 {
     font-size: 24px;
   }
@@ -770,8 +752,5 @@ footer {
   }
   .filterButton {
     font-size: 12px;
-  }
-  #filtres {
-    column-gap: 8px;
   }
 }
